@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5lq-FR-l6S">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image Editor View Controller-->
+        <scene sceneID="63I-Cs-8cC">
+            <objects>
+                <viewController storyboardIdentifier="ImageEditorViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5lq-FR-l6S" customClass="ImageEditorViewController" customModule="Gridy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="ZCd-cu-SkI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JX2-9j-icS" userLabel="Container View">
+                                <rect key="frame" x="82" y="121" width="250" height="250"/>
+                                <subviews>
+                                    <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yfE-b5-0ii" customClass="GridView" customModule="Gridy" customModuleProvider="target">
+                                        <rect key="frame" x="2" y="3" width="244" height="244"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </view>
+                                    <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Boats" translatesAutoresizingMaskIntoConstraints="NO" id="zw2-4o-STp" userLabel="Unsolved Puzzle Image View">
+                                        <rect key="frame" x="3" y="3" width="244" height="244"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94988268610000004" green="0.77392262219999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JX2-9j-icS" secondAttribute="height" multiplier="1:1" id="27k-kk-pb2"/>
+                                    <constraint firstAttribute="trailing" secondItem="zw2-4o-STp" secondAttribute="trailing" constant="3" id="bHD-9G-fcs"/>
+                                    <constraint firstItem="zw2-4o-STp" firstAttribute="leading" secondItem="JX2-9j-icS" secondAttribute="leading" constant="3" id="mh9-E6-EWL"/>
+                                    <constraint firstItem="zw2-4o-STp" firstAttribute="top" secondItem="JX2-9j-icS" secondAttribute="top" constant="3" id="n03-ds-TPf"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="250" id="r1x-zd-pxa"/>
+                                    <constraint firstAttribute="bottom" secondItem="zw2-4o-STp" secondAttribute="bottom" constant="3" id="vgG-vC-pts"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Adjust the Puzzle Image: Zoom, Rotate, Reposition" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nD3-gU-XCc">
+                                <rect key="frame" x="95" y="60" width="224" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iei-L9-PSN">
+                                <rect key="frame" x="154.5" y="391" width="105" height="50"/>
+                                <color key="backgroundColor" red="0.02617239021" green="0.74694126839999997" blue="0.72039812800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YAT-9L-k0x"/>
+                                    <constraint firstAttribute="width" constant="105" id="nRg-XU-bnc"/>
+                                </constraints>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startPuzzle:" destination="5lq-FR-l6S" eventType="touchUpInside" id="kdZ-4p-FSc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="T1y-rG-cwq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JX2-9j-icS" firstAttribute="centerX" secondItem="nD3-gU-XCc" secondAttribute="centerX" id="0fF-XT-twh"/>
+                            <constraint firstItem="JX2-9j-icS" firstAttribute="top" secondItem="nD3-gU-XCc" secondAttribute="bottom" constant="20" id="6PM-y9-Vm5"/>
+                            <constraint firstItem="nD3-gU-XCc" firstAttribute="top" secondItem="T1y-rG-cwq" secondAttribute="top" constant="16" id="Spz-VM-BqS"/>
+                            <constraint firstItem="T1y-rG-cwq" firstAttribute="trailing" secondItem="nD3-gU-XCc" secondAttribute="trailing" constant="95" id="oiW-Hu-b27"/>
+                            <constraint firstItem="Iei-L9-PSN" firstAttribute="top" secondItem="JX2-9j-icS" secondAttribute="bottom" constant="20" id="rSD-EX-6GW"/>
+                            <constraint firstItem="Iei-L9-PSN" firstAttribute="centerX" secondItem="T1y-rG-cwq" secondAttribute="centerX" id="rc3-Gk-rAm"/>
+                            <constraint firstItem="nD3-gU-XCc" firstAttribute="leading" secondItem="T1y-rG-cwq" secondAttribute="leading" constant="95" id="ryr-t4-0eh"/>
+                            <constraint firstItem="T1y-rG-cwq" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Iei-L9-PSN" secondAttribute="bottom" constant="20" id="xwZ-Rk-oKx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="creationFrame" destination="JX2-9j-icS" id="gY8-AP-wgo"/>
+                        <outlet property="creationImageView" destination="zw2-4o-STp" id="4Zw-p5-fj8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8kx-T3-rKC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-110.14492753623189" y="0.6696428571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Boats" width="320" height="320"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
